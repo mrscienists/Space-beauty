@@ -2,24 +2,33 @@ Kā izveidot carousel html un to rediģēt css stilos?
 
 Lai izveidotu karuseli:
 
-<div class="carousel" data-switch-delay="3.5">              <!-- Vajag norādit class="carousel" -->
-    <div class="carousel-images">                               <!-- Vajag norādit konteineri class="carousel-images" tieši attēlīm>
-        <img src="../images/1.png">                                 <!-- pievienot attēlu karuselī -->
+<div class="carousel" data-switch-delay="3.5">                  <!-- Vajag norādit class="carousel" -->
+    <div class="carousel-images">                                   <!-- Vajag norādit konteineri class="carousel-images" tieši attēlīm>
+        <img src="../images/1.png">                                     <!-- pievienot attēlu karuselī -->
                     ...
     </div>
-    <div class="buttons">                                       <!-- konteineris pogām -->
-        <a id="next">next_button</a>                                <!-- nākamais attēls (ar id="next") -->
-        <a id="toggle_auto" data-on="on" data-off="off"></a>        <!-- apstāt pārslēgšanu (ar id="toggle_auto") -->
-        <a id="prev">previous_button</a>                            <!-- iepriekšais attēls (ar id="prev") -->
+    <div class="buttons">                                           <!-- konteineris pogām -->
+        <a id="next">next_button</a>                                    <!-- nākamais attēls (ar id="next") -->
+        <a id="toggle_auto" data-on="on" data-off="off"></a>            <!-- apstāt pārslēgšanu (ar id="toggle_auto") -->
+        <a id="prev">previous_button</a>                                <!-- iepriekšais attēls (ar id="prev") -->
     </div>
 </div>
 
 
-<div class="carousel"> pieņem arī data-switch-delay="numValue", kas maina pārslegšanas aizkavi (arī ar punktu)
+<div class="carousel"> pieņem arī:
+    data-switch-delay="numValue", kas maina pārslegšanas aizkavi (arī ar punktu)
+    data-hover="", kur "on" ieslēdz režīmu, kurā attēla virsū parādās teksts, kad lietotājs pārvieto kursoru uz attēliem
+            Ja data-hover="on", katram attēlam jāizmanto konteiners class="hover" ar tekstu:
+            <div class="carousel-images">
+                <div class="hover">                      <!-- konteiners class="hover" -->
+                    <img src="../images/1.png">          <!-- attēls -->
+                    <p>Teksts uz attēla</p>              <!-- teksts, kas parādās uz hover -->
+                </div>
+            </div>
+
 <a id="toggle_auto"></a> pieņem arī:
     data-on="on" - norāda kas tiek rakstīts uz pogas, kad pārslēgšana ir ieslēgta,
     data-off="off" - norāda kas tiek rakstīts uz pogas, kad pārslēgšana ir izslēgta
-
 
 Lai mainītu izskatu:
 .carousel{
@@ -66,3 +75,15 @@ Automātiskās ritināšanas poga (#toggle_auto vai .carousel selektorā drīkst
 • --carousel-toggle-border - Apakšējās pogas rāmis. Piemērs: none.
 • --carousel-toggle-radius - Apakšējās pogas stūru noapaļojums. Piemērs: 4px.
 • --carousel-toggle-shadow - Apakšējās pogas ēna. Piemērs: 0 2px 4px rgba(0,0,0,0.15).
+
+Teksts virs attēliem hover režīmā (.carousel selektorā drīkst mainīt):
+• --carousel-hover-bg-color - Aizlieja (fona) krāsa aiz teksta, kas parādās virs attēla. Piemērs: rgba(0,0,0,0.6).
+• --carousel-hover-text-color - Teksta krāsa virs attēla. Piemērs: yellow.
+• --carousel-hover-font-size - Teksta izmērs virs attēla. Piemērs: 40px.
+• --carousel-btn-font-weight - Teksta treknraksts virs attēla (šis pats mainīgais ietekmē arī sānu pogas). Piemērs: bold.
+• --carousel-hover-item-alignment - Teksta vertikāls novietojums virs attēla (align-items). Piemērs: flex-start (augšā), flex-end (apakšā).
+• --carousel-hover-content-justify - Teksta horizontāls novietojums virs attēla (justify-content). Piemērs: flex-start (pa kreisi), flex-end (pa labi).
+• --carousel-hover-text-align - Teksta līdzinājums rindu iekšpusē (text-align). Piemērs: left, right, justify.
+• --carousel-hover-text-justify - Teksta izlīdzināšanas veids (text-justify), strādā tikai kopā ar --carousel-hover-text-align: justify. Piemērs: inter-word.
+• --carousel-hover-item-justify - Elementa horizontāls līdzinājums (justify-items). Piemērs: start.
+• --carousel-hover-content-align - Satura vertikāls līdzinājums (align-content). Piemērs: start.

@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     const carousel_container = document.querySelector(".carousel");
     const track = document.querySelector(".carousel-images");
-    const images = document.querySelectorAll(".carousel-images img");
+    let images;
+    if(carousel_container.dataset.hover == "on"){
+        images = document.querySelectorAll(".carousel .carousel-images .hover");
+    }else {
+        images = document.querySelectorAll(".carousel-images img");
+    }
+
     const next_btt = document.querySelector(".buttons #next");
     const prev_btt = document.querySelector(".buttons #prev");
     const toggle_btt = document.querySelector(".buttons #toggle_auto");
 
     let txt_when_switch_off = toggle_btt.dataset.off;
     let txt_when_switch_on = toggle_btt.dataset.on;
-    
+
     if (txt_when_switch_off === undefined) {
         txt_when_switch_off = "off"
     }
@@ -46,15 +52,69 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         Object.assign(track.style, track_style);
 
-        const images_style = {
+        const img_responsive_style = {
             width: "100%",
-            flexShrink: "0",
+            display: "block",
 
-            objectFit: "var(--carousel-img-fit, cover)",
+            objectFit: "var(--carousel-img-fit, contain)",
             height: "var(--carousel-img-height, auto)",
-            aspectRatio: "var(--carousel-img-ratio, auto)"
+            aspectRatio: "var(--carousel-img-ratio, 1/1)",
+            transition: "var(--carousel-img-transition, transform 0.3s ease-in-out)"
         };
-        images.forEach(img => Object.assign(img.style, images_style));
+
+        if (carousel_container.dataset.hover == "on") {
+            images.forEach(block => {
+                block.style.width = "100%";
+                block.style.flexShrink = "0";
+                block.style.position = "relative";
+                block.style.overflow = "hidden";
+
+                const img = block.querySelector("img");
+                if (img) {
+                    Object.assign(img.style, img_responsive_style);
+                }
+
+                const p = block.querySelector("p");
+                if (p) {
+                    const p_style = {
+                        position: "absolute",
+                        margin: 0,
+                        inset: 0,
+                        display: "flex",
+                        opacity: 0,
+                        
+                        backgroundColor: "var(--carousel-hover-bg-color, #0a0a0a9a)",
+                        color: "var(--carousel-hover-text-color, #ffffff)",
+                        alignItems: "var(--carousel-hover-item-alignment, center)",
+                        justifyItems: "var(--carousel-hover-item-justify, center)",
+                        alignContent: "var(--carousel-hover-content-align, center)",
+                        justifyContent: "var(--carousel-hover-content-justify, center)",
+                        textAlign: "var(--carousel-hover-text-align, center)",
+                        textJustify: "var(--carousel-hover-text-justify, center)",
+                        fontSize: "var(--carousel-hover-font-size, 25px)",
+                        fontWeight: "var(--carousel-btn-font-weight, normal)"
+                    };
+                    Object.assign(p.style, p_style);
+                }
+
+                block.addEventListener("mouseenter", () => {
+                    if (p) p.style.opacity = "1";
+                    if (img) img.style.transform = "scale(1.05)";
+                });
+
+                block.addEventListener("mouseleave", () => {
+                    if (p) p.style.opacity = "0";
+                    if (img) img.style.transform = "scale(1)";
+                });
+            });
+
+        } else {
+            images.forEach(img => {
+                img.style.width = "100%";
+                img.style.flexShrink = "0";
+                Object.assign(img.style, img_responsive_style);
+            });
+        }
 
         const next_btt_style = {
             position: "absolute",
@@ -63,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
             right: "10px",
             cursor: "pointer",
             userSelect: "none",
+            zIndex: 3,
 
             padding: "var(--carousel-btn-padding, 10px 15px)",
             color: "var(--carousel-next-color, var(--carousel-btn-color, black))",
@@ -82,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
             left: "10px",
             cursor: "pointer",
             userSelect: "none",
+            zIndex: 3,
 
             padding: "var(--carousel-btn-padding, 10px 15px)",
             color: "var(--carousel-prev-color, var(--carousel-btn-color, black))",
@@ -101,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             transform: "translateX(-50%)",
             cursor: "pointer",
             userSelect: "none",
+            zIndex: 3,
 
             padding: "var(--carousel-toggle-padding, 10px 15px)",
             color: "var(--carousel-toggle-color, black)",
