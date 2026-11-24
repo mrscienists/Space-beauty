@@ -1,0 +1,68 @@
+Kā izveidot carousel html un to rediģēt css stilos?
+
+Lai izveidotu karuseli:
+
+<div class="carousel" data-switch-delay="3.5">              <!-- Vajag norādit class="carousel" -->
+    <div class="carousel-images">                               <!-- Vajag norādit konteineri class="carousel-images" tieši attēlīm>
+        <img src="../images/1.png">                                 <!-- pievienot attēlu karuselī -->
+                    ...
+    </div>
+    <div class="buttons">                                       <!-- konteineris pogām -->
+        <a id="next">next_button</a>                                <!-- nākamais attēls (ar id="next") -->
+        <a id="toggle_auto" data-on="on" data-off="off"></a>        <!-- apstāt pārslēgšanu (ar id="toggle_auto") -->
+        <a id="prev">previous_button</a>                            <!-- iepriekšais attēls (ar id="prev") -->
+    </div>
+</div>
+
+
+<div class="carousel"> pieņem arī data-switch-delay="numValue", kas maina pārslegšanas aizkavi (arī ar punktu)
+<a id="toggle_auto"></a> pieņem arī:
+    data-on="on" - norāda kas tiek rakstīts uz pogas, kad pārslēgšana ir ieslēgta,
+    data-off="off" - norāda kas tiek rakstīts uz pogas, kad pārslēgšana ir izslēgta
+
+
+Lai mainītu izskatu:
+.carousel{
+    ...
+}
+
+.carousel selektorā drīkst mainīt:
+Galvenais konteiners (.carousel selektorā drīkst mainīt):
+• --carousel-max-width - Nosaka karuseles maksimālo platumu. Piemērs: 600px.
+• --carousel-height - Nosaka karuseles augstumu. Piemērs: 400px.
+• --carousel-bg - Karuseles fona krāsa. Piemērs: #f0f0f0.
+• --carousel-border - Karuseles rāmja stils un krāsa. Piemērs: 2px solid red.
+• --carousel-radius - Karuseles stūru noapaļojums. Piemērs: 10px.
+• --carousel-shadow - Karuseles ēnas efekts. Piemērs: 0 4px 8px rgba(0,0,0,0.2).
+
+Slaidu lente un attēli (.carousel selektorā drīkst mainīt):
+• --carousel-transition - Attēlu pārslēgšanās animācijas ātrums un tips. Piemērs: transform 0.5s ease.
+• --carousel-img-fit - Attēlu mērogošanas veids konteinerā. Piemērs: cover.
+• --carousel-img-height - Attēlu augstums. Piemērs: 100%.
+• --carousel-img-ratio - Attēlu malu attiecība (proporcija). Piemērs: 16/9.
+
+Navigācijas pogas (.carousel vai pogu selektoros drīkst mainīt):
+• --carousel-btn-padding - Iekšējās atkāpes abām sānu pogām. Piemērs: 12px 20px.
+• --carousel-btn-font-size - Sānu pogu teksta vai bultiņu izmērs. Piemērs: 24px.
+• --carousel-btn-font-weight - Sānu pogu teksta treknraksts. Piemērs: bold.
+• --carousel-btn-border - Sānu pogu rāmis. Piemērs: 1px solid black.
+• --carousel-btn-radius - Sānu pogu stūru noapaļojums. Piemērs: 50%.
+• --carousel-btn-shadow - Sānu pogu ēna. Piemērs: 0 2px 5px rgba(0,0,0,0.1).
+• --carousel-btn-color - Kopējā krāsa abām sānu pogām, ja nav definēti specifiskie mainīgie. Piemērs: white.
+• --carousel-btn-bg - Kopējais fons abām sānu pogām, ja nav definēti specifiskie mainīgie. Piemērs: rgba(0,0,0,0.5).
+
+Specifiskie iestatījumi katrai pogai atsevišķi:
+• --carousel-next-color - Tikai labās pogas tekstas/bultiņas krāsa. Piemērs: green.
+• --carousel-next-bg - Tikai labās pogas fona krāsa. Piemērs: black.
+• --carousel-prev-color - Tikai kreisās pogas tekstas/bultiņas krāsa. Piemērs: blue.
+• --carousel-prev-bg - Tikai kreisās pogas fona krāsa. Piemērs: gray.
+
+Automātiskās ritināšanas poga (#toggle_auto vai .carousel selektorā drīkst mainīt):
+• --carousel-toggle-padding - Apakšējās auto-scroll pogas iekšējās atkāpes. Piemērs: 5px 10px.
+• --carousel-toggle-color - Apakšējās pogas teksta krāsa. Piemērs: white.
+• --carousel-toggle-bg - Apakšējās pogas fona krāsa. Piemērs: blue.
+• --carousel-toggle-font-size - Apakšējās pogas šrifta izmērs. Piemērs: 14px.
+• --carousel-toggle-font-weight - Apakšējās pogas teksta treknraksts. Piemērs: 600.
+• --carousel-toggle-border - Apakšējās pogas rāmis. Piemērs: none.
+• --carousel-toggle-radius - Apakšējās pogas stūru noapaļojums. Piemērs: 4px.
+• --carousel-toggle-shadow - Apakšējās pogas ēna. Piemērs: 0 2px 4px rgba(0,0,0,0.15).
