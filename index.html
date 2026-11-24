@@ -4,15 +4,17 @@
         <meta charset="UTF-8">
         <title>Space-beauty</title> 
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/carousel/carousel.js"></script>
     </head>
     <header>
         <div class="container">
             <div class="logo">
                 <img src="images\растровый.webp" height="75">
                 <div>Space beauty</div>
-            </div> 
+                <div class="v-line"></div>
+            </div>
             <a>Galvenā sadaļa</a>
-            <a>Attēlu kolekcija</a> <!---ссылки-->
+            <a>Attēlu kolekcija</a> <!-- ссылки -->
             <a>Attēlu karuselis</a>
             <a>Kājene</a>
         </div>
@@ -21,9 +23,8 @@
         <div class="mainImage">
             <img src="images/pictures_originals_2014_Space_Mac_os_x_lion_075412_.jpg" width="100%">
             <p class="TextImage">Space&nbsp;Beauty</p>
+            <p class="TextAbout">this site about kosmossthis site about kosmossthis si</p>
         </div>
-
-        
         <div class="ImagesLink">
             <a class="imageCard">
                 <img src="images\depositphotos_226084972-stock-photo-sirius-brightest-star-seen-earth.jpg " width="100%" height="100%">
@@ -43,6 +44,55 @@
                     <span>Melnie caurumi</span>
                 </div>
             </a>
+        </div>
+        <div class="carousel" data-switch-delay="3.5" data-hover="on">
+            <div class="carousel-images">
+                <div class="hover">
+                    <img src="images\carousel\galaxy-night-panorama.jpg">
+                    <p>Zvaigzne</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\cool-background-blank-wallpaper-place-your-concept.jpg">
+                    <p>Melnais caurums</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\cometlovejoy2.jpg">
+                    <p>Astronomisks objekts</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\Planet_collage_to_scale.jpg">
+                    <p>Planētas</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\estestvennyy_sputnik.png">
+                    <p>Dabiskais pavadonis</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\NGC_4414_(NASA-med).jpg">
+                    <p>Galaktika</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\messier92s.jpg">
+                    <p>Zvaigžņu kopa</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\tail-large-comet-glows-against-background-stars-space-comet-flies-near-earth_533381-242.jpg">
+                    <p>Komēta</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\oPokc4rVY8SB8wT77vzz84-650-80.jpg">
+                    <p>Jurijs Gagarins<br>(pirmais cilvēks kosmosā)</p>
+                </div>
+                <div class="hover">
+                    <img src="images\carousel\Neil_Armstrong_23_May_1952_cropped_650.jpg">
+                    <p>Nīls Ārmstrongs<br>(pirmais cilvēks uz Mēness)</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <a id="next">></a>
+                <a id="toggle_auto" data-on="on" data-off="off"></a>
+                <a id="prev"><</a>
+            </div>
         </div>
     </body>
 </html>

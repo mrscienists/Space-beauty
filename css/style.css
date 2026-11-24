@@ -1,93 +1,138 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #0d195c;
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #111558;
 }
 
-.container {
-  display: flex;
-  background-color: #202241;
-  align-items: center;
-  width: auto;
-  
+.container{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #111558e0;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
 }
+
+.v-line{
+    border-left: 2px solid #6e71aa;
+    height: 100px;
+}
+
 .container a,
-.container div {
-  margin: 10px;
-  padding: 10px;
-  font-size: 18px;
-  color: #ebedf4;
-}
-.container .logo {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
+.container div{
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: #ebedf4;
 }
 
-.mainImage {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.container .logo{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
 }
 
-.mainImage img {
-  width: 100%;
-  margin-bottom: 10%;
+.mainImage{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.TextImage {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  width: 100%;
-  font-size: clamp(2rem, 10vw, 10rem); 
-  color: #e8eaa1;
-  text-align: center;
+.mainImage img{
+    margin-top: 120px;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.TextImage{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 100%;
+    font-size: clamp(2rem, 10vw, 10rem); 
+    color: #e8eaa1;
+    text-align: center;
+}
+
+.TextAbout{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: max-content;
+    max-width: 90vw; 
+    font-size: 3cqw;
+    padding: 10px 20px; 
+    box-sizing: border-box;
+    color: #7f8dddfd;
+    background-color: #28263f88;
+    text-align: center;
 }
 
 .ImagesLink{
-  display: flex;
+    display: flex;
+    margin-bottom: 5cqw;
 }
 
-.ImagesLink a {
-  flex: 1;
-  min-width: 0; /* не даёт широкой картинке растягивать свой блок */
-  height: auto;
+.ImagesLink a{
+    flex: 1;
+    min-width: 0;
+    height: auto;
 }
 
-.ImagesLink img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* заполняет блок без искажения пропорций */
-  display: block; /* убирает лишний нижний отступ у картинки */
+.ImagesLink img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-
-.imageCard {
-  position: relative;
+.imageCard{
+    position: relative;
 }
 
-.imageCard .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: #0a0a0a9a;
+.imageCard .overlay{
+    position: absolute;
+    inset: 0;
+    background-color: #0a0a0a9a;
 
-  color: #ffffff;
-  display: flex;
-  align-items: center;     /* центрирует по вертикали */
-  justify-content: center; /* центрирует по горизонтали */
-  text-align: center;
-  font-size: 50px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 5cqw;
 
-  opacity: 0;
+    opacity: 0;
 }
 
-.imageCard:hover .overlay {
-  opacity: 1;
+.imageCard:hover .overlay{
+    opacity: 1;
 }
-.imageCard:hover img {
-  transform: scale(1.05);
+.imageCard:hover img{
+    transform: scale(1.05);
+}
+
+.carousel{
+    --carousel-max-width: 700px;
+    --carousel-border: 10px solid rgb(42, 38, 100);
+    --carousel-radius: 150px;
+
+    --carousel-btn-bg: #1c238371;
+    --carousel-btn-radius:100px;
+    --carousel-btn-color: #e8eaa1;
+    --carousel-toggle-color:#e8eaa1;
+    --carousel-toggle-padding: 25px;
+    --carousel-toggle-font-size: 3cqw;
+
+    --carousel-hover-bg-color: #0a0a0a9a;
+    --carousel-hover-text-color: #ffffff;
+    --carousel-hover-font-size: 4cqw;
 }
