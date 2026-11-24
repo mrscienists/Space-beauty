@@ -137,7 +137,7 @@ html, body{
 
     --carousel-hover-bg-color: #0a0a0a9a;
     --carousel-hover-text-color: #ffffff;
-    --carousel-hover-font-size: 4cqw;
+    --carousel-hover-font-size: 4rem;
 }
 
 .divider{
