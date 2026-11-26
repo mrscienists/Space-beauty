@@ -72,6 +72,13 @@ body{
     margin-right: auto;
 }
 
+main#main-content{
+    background-color: #00000052;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    backdrop-filter: blur(4px);
+}
+
 .mainVideo {
     position: relative;
     width: 100%;
@@ -303,6 +310,13 @@ body{
     background-color: rgba(0, 0, 0, 0.451);
     backdrop-filter: blur(4px);
     border-radius: 20px;
+}
+
+main#footer{
+    background-color: #0000006c;
+    border-radius: 20px;
+    padding-top: 20px;
+    backdrop-filter: blur(4px);
 }
 
 .footer {
