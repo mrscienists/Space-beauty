@@ -1,0 +1,29 @@
+Lai izveidotu zvaigznes uz fonas ir jāuzraksta html:
+<div id="stars"></div><script>launch_stars()</script>
+
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;        /*zvaigžņu attēlošanas slānis*/
+    pointer-events: none;
+    --star-count: 60;   /*zvaigžņu daudzums*/
+    --min-size: 10;     /*zvaigžņu minimālais izmērs*/
+    --max-size: 12;     /*zvaigžņu maksimālais izmērs*/
+    --min-duration: 2;  /*zvaigžņu animācijas minimālais ilgums*/
+    --max-duration: 4;  /*zvaigžņu animācijas maksimālais ilgums*/
+    --min-delay: 2;     /*zvaigžņu animācijas minimālā aizkave*/
+    --max-delay: 6;     /*zvaigžņu animācijas maksimālā aizkave*/
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;                                         /*padara zvaigznes par apli*/
+    background: #fff;                                           /*Zvaigžņu krāsa*/
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.7);           /*Zvaigžņu "bloom" effekts*/
+    animation: twinkle ease-in-out infinite;                    /*Zvaigžņu animācijas*/
+}
+
+@keyframes twinkle {                                            /*Zvaigžņu animācija*/
+    0%, 100% { opacity: 0.25; transform: scale(0.8); }
+    50%      { opacity: 1;    transform: scale(1.2); }
+}

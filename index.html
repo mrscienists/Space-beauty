@@ -6,10 +6,11 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="images/растровый.webp">
         <script src="js/carousel/carousel.js"></script>
+        <script src="js/stars/stars.js"></script>
     </head>
     <header>
-        <nav >
-            <ul class="container">
+        <nav>
+            <div class="container">
                 <div class="logo">
                     <img src="images\растровый.webp" height="75">
                     <a>Space beauty</a>
@@ -20,10 +21,11 @@
                 <a href="#karuselis">Attēlu karuselis</a>
                 <a href="#Gallery">Attēlu kolekcija</a>
                 <a href="#footer">Kājene</a>
-            </ul>
+            </div>
         </nav>
     </header>
     <body>
+        <div id="stars"></div><script>launch_stars()</script>
         <main id="main-content">
             <div class="mainVideo">
                 <div class="video-container">
@@ -193,8 +195,7 @@
                         </p>
                     </div>
                     <div class="pictureStar">
-                        <img class="pictureStar" src="images/Gallery/Alnitak_sun_comparison.svg.webp">
-                        <img  src="images/Gallery/Flame_Neb.jpg">
+                        <img src="images/Gallery/Flame_Neb.jpg">
                     </div>
                 </section>
                 <section class ="star1">
@@ -414,6 +415,7 @@
                 </section>
             </article>
         </main>
+        <hr class="main-divider">
         <main id="footer">
             <footer class="footer">
                 <div class="footer-img">

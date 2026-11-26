@@ -1,10 +1,37 @@
-html, body{
+body{
     margin: 0;
     padding: 0;
     background: #26004d;
-    background: linear-gradient(-90deg, #05002e 0%, #1e0047 100%);
+    background: linear-gradient(90deg, #490765 0%, rgb(38, 1, 101)100%);
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    --star-count: 60;
+    --min-size: 10;
+    --max-size: 12;
+    --min-duration: 2;
+    --max-duration: 4;
+    --min-delay: 2;
+    --max-delay: 6;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 6px 1px rgb(255, 255, 255);
+    animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.8); }
+    50%      { opacity: 1;    transform: scale(1.2); }
 }
 
 .container{
@@ -96,7 +123,7 @@ html, body{
     margin: 0;
     width: max-content;
     max-width: 90vw; 
-    font-size: 15px;
+    font-size: 3cqw;
     padding: 10px 20px; 
     box-sizing: border-box;
     color: #7f8dddfd;
@@ -115,7 +142,7 @@ html, body{
 
 .photo-header{
     font-size: 5cqw; 
-    justify-self: center; 
+    text-align: center; 
     color: #e8eaa1;
 }
 
@@ -194,6 +221,10 @@ html, body{
     margin: 20px;
     margin-bottom: 1rem;
     margin-top: -1rem;
+    background-color: #00000048;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    text-align: center;
 }
 
 .star1{
@@ -222,8 +253,9 @@ html, body{
 }
 
 .pictureStar img {
-    width: 50%;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .pictureStar{
@@ -232,18 +264,30 @@ html, body{
     gap: 1rem;
     width: 100%;
     height: auto;
+    padding: 10px;
+
+    background-color: #0a0a0a3b;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
+
 .MainText{
     color: #ffffff;
     font-size: 4cqw;
     margin-bottom: 10%;
+    padding: 10px;
     padding-left: 5%;
+
+    background-color: rgba(0, 0, 0, 0.451);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
+
 .GalleryMainText .MainText{
     line-height: 1;
     color: #ffffff;
     font-size: 4cqw;
-    margin-top: -1rem;
+    margin-top: 0rem;
     margin-bottom: 5%;
 }
     
@@ -254,6 +298,11 @@ html, body{
     color: #e8eaa1;
     font-size: 2.5cqw;
     margin-bottom: 5%;
+    padding: 10px;
+    
+    background-color: rgba(0, 0, 0, 0.451);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
 
 .footer {
