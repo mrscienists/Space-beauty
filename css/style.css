@@ -1,11 +1,38 @@
-html, body{
+body{
     margin: 0;
     padding: 0;
-    background-color: #111446;
     font-family: "Neon";
+    background: #26004d;
+    background: linear-gradient(90deg, #490765 0%, rgb(38, 1, 101)100%);
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
-    
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    --star-count: 60;
+    --min-size: 10;
+    --max-size: 12;
+    --min-duration: 2;
+    --max-duration: 4;
+    --min-delay: 2;
+    --max-delay: 6;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 6px 1px rgb(255, 255, 255);
+    animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.8); }
+    50%      { opacity: 1;    transform: scale(1.2); }
 }
 
 .container{
@@ -18,7 +45,9 @@ html, body{
     margin: 0px;
     z-index: 10;
 
-    background-color: #111558e0;
+    background: linear-gradient(90deg, #11155839 0%, #4d0081d0 100%);
+    backdrop-filter: blur(4px);
+
     align-items: center;
 
     overflow-y: hidden;
@@ -44,17 +73,35 @@ html, body{
     margin-right: auto;
 }
 
-.mainImage{
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+main#main-content{
+    background-color: #00000052;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    backdrop-filter: blur(4px);
 }
 
-.mainImage img{
-    margin-top: 85px;
+.mainVideo {
+    position: relative;
     width: 100%;
-    margin-bottom: 5%;
+    height: calc(70cqw - 87px);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 50px;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .TextImage{
@@ -74,6 +121,13 @@ html, body{
     font-size: clamp(2rem, 7vw, 6.5rem); 
     color: #e8eaa1;
     text-align: center;
+
+    background-color: rgba(58, 58, 58, 0.304);
+    backdrop-filter: blur(4px);
+    border: rgba(0, 0, 0, 0.071) solid 2px;
+    border-radius: 50px;
+
+    width: 70%;
 }
 
 .TextAbout{
@@ -91,11 +145,26 @@ html, body{
     padding: 15px 20px; 
     box-sizing: border-box;
     color: #a7b4fafd;
-    background-color: #28263f88;
+
+    background-color: rgba(16, 16, 16, 0.375);
+    backdrop-filter: blur(4px);
+    border: rgba(0, 0, 0, 0.071) solid 2px;
+    border-radius: 50px;
+
     text-align: center;
 
     border: 10px solid #020c3152;
     border-radius: 50px;
+}
+
+.main-divider{
+    border-color: rgb(115, 0, 255);
+}
+
+.photo-header{
+    font-size: 5cqw; 
+    text-align: center; 
+    color: #e8eaa1;
 }
 
 .ImagesLink{
@@ -118,6 +187,7 @@ html, body{
 }
 
 .imageCard{
+    margin-top: 20px;
     position: relative;
 }
 
@@ -153,9 +223,11 @@ html, body{
     --carousel-btn-bg: #1c238371;
     --carousel-btn-radius:100px;
     --carousel-btn-color: #e8eaa1;
+    --carousel-btn-font-size: 7cqw;
+
     --carousel-toggle-color:#e8eaa1;
     --carousel-toggle-padding: 25px;
-    --carousel-toggle-font-size: 3cqw;
+    --carousel-toggle-font-size: 5cqw;
 
     --carousel-hover-bg-color: #0a0a0a9a;
     --carousel-hover-text-color: #ffffff;
@@ -176,6 +248,10 @@ html, body{
     margin: 20px;
     margin-bottom: 1rem;
     margin-top: -1rem;
+    background-color: #00000048;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    text-align: center;
 }
 
 .star1{
@@ -226,17 +302,30 @@ html, body{
     gap: 1rem;
     width: 100%;
     height: auto;
+    padding: 10px;
+
+    background-color: #0a0a0a3b;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
 .pictureStar.BigPicture{
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
+
 .MainText{
     animation: wipe-enter;
     animation-timeline: view();
     color: #ffffff;
-    margin-bottom: 3%;
+    font-size: 4cqw;
+    margin-bottom: 10%;
+    padding: 10px;
+    padding-left: 5%;
+
+    background-color: rgba(0, 0, 0, 0.451);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
 
 .MainText.MainTextUnic{
@@ -268,27 +357,55 @@ html, body{
     margin: 0;
     max-width: 90vw;
     color: #e8eaa1;
+
     font-size: 1.5cqw;
     margin-bottom: 5%;
     margin-left: 5%;
     margin-right: 25%;
+    padding: 10px;
+    
+    background-color: rgba(0, 0, 0, 0.451);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
 
-.footer{
+main#footer{
+    background-color: #0000006c;
+    border-radius: 20px;
+    padding-top: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.footer {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
     display: grid;
-    bottom: 0;
-    right: 0;
-    background-color: #020c31;
+
+    background-color: #000000;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
+.footer-content {
+    display: grid;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-items: center;
+}
+
 .MainTextFooter{
-    color: #ccd6947c;
+    color: #ccd694;
     font-size: 1.5cqw;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.59);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    width: 50%;
 }
 
 .BoxFooter{
@@ -303,9 +420,10 @@ html, body{
 
 .BoxFooter > p {
     border: 5px outset;
-    background-color: #4467da2a;
+    background-color: rgba(0, 0, 0, 0.59);
+    backdrop-filter: blur(4px);
     border-color: #e7eca388 #000000 #000000 #e7eca388; 
-    color: #cedf71ab;
+    color: #ccd694;
     font-size: 1cqw;
     padding: 10px;
     margin: 0;
@@ -313,6 +431,22 @@ html, body{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.footer-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.footer-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
 @media (max-width:1300px) {

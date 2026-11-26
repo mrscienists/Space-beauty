@@ -2,14 +2,16 @@
 <html lang="lv">
     <head>
         <meta charset="UTF-8">
-        <title>Space-beauty</title> 
+        <title>Space-beauty</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="images/растровый.webp">
         <script src="js/carousel/carousel.js"></script>
+        <script src="js/stars/stars.js"></script>
+        <script src="js/blur_remover.js"></script>
     </head>
     <header>
-        <nav >
-            <ul class="container">
+        <nav>
+            <div class="container">
                 <div class="logo">
                     <img src="images\растровый.webp" height="75">
                     <a>Space-beauty</a>
@@ -20,13 +22,19 @@
                 <a href="#karuselis">Attēlu karuselis</a>
                 <a href="#Gallery">Attēlu kolekcija</a>
                 <a href="#footer">Kājene</a>
-            </ul>
+            </div>
         </nav>
     </header>
     <body>
+        <div id="stars"></div><script>launch_stars()</script>
         <main id="main-content">
-            <div class="mainImage">
-                <img src="images/pictures_originals_2014_Space_Mac_os_x_lion_075412_.jpg" width="100%">
+            <div class="mainVideo">
+                <div class="video-container">
+                    <video autoplay loop muted playsinline poster="../images/bg.webp">
+                        <source src="../images/videos/0001-0500.webm" type="video/webm">
+                        <source src="../images/videos/0001-0500.mp4" type="video/mp4"> <!-- Добавьте для поддержки Apple устройств -->
+                    </video>
+                </div>
                 <p class="TextImage">Space&nbsp;Beauty</p>
                 <p class="TextAbout">
                     Esiet sveicināti Space-beauty tīmekļa vietnē.<br>
@@ -39,27 +47,35 @@
                 </p>
             </div>
         </main>
+        <hr class="main-divider">
+        <p class="photo-header">
+            Jūs uzzināsiet par:
+        </p>
         <div class="ImagesLink">
             <a class="imageCard" href="#star">
                 <img src="images\depositphotos_226084972-stock-photo-sirius-brightest-star-seen-earth.jpg " width="100%" height="100%">
                 <div class="overlay">
-                    <span>Zvaigznes</span>
+                    <span>Zvaigznēm</span>
                 </div>
             </a>
             <a class="imageCard" href="#planet">
                 <img src="images\3d-rendering-planet-earth_23-2150498478.jpg" width="100%" height="100%">
                 <div class="overlay">
-                    <span>Planētas</span>
+                    <span>Planētām</span>
                 </div>
             </a>
             <a class="imageCard" href="#caurumi">
                 <img src="images\-2147483648_-215690.jpg" width="100%" height="100%">
                 <div class="overlay">
-                    <span>Melnie caurumi</span>
+                    <span>Melnajiem caurumiem</span>
                 </div>
             </a>
         </div>
+        <hr class="main-divider">
         <main id="karuselis">
+            <p class="photo-header">
+                Interesantas bildes:
+            </p>
             <div class="carousel" data-switch-delay="3.5" data-hover="on">
                 <div class="carousel-images">
                     <div class="hover">
@@ -406,32 +422,38 @@
                 </section>
             </article>
         </main>
+        <hr class="main-divider">
         <main id="footer">
             <footer class="footer">
-                <p class="MainTextFooter">
-                    Space-beauty<br><br>Dmitrijs Gaičonoks.
-                    <br>Anastasija Minajeva.
-                </p>
-                <div class="BoxFooter">
-                    <p>
-                        © 2026 [Space-beauty].<br>
-                        Visas tiesības aizsargātas.<br>
+                <div class="footer-img">
+                    <img src="../images/pictures_originals_2014_Space_Mac_os_x_lion_075412_.jpg">
+                </div>
+                <div class="footer-content">
+                    <p class="MainTextFooter">
+                        <span style="font-size: large;">Space-beauty</span><br><br>Dmitrijs Gaičonoks.
+                        <br>Anastasija Minajeva.
                     </p>
-                    <p>
-                        Izmantotie avoti:<br><br>
-                        Media: magnific universalis, ing.iac.es,<br>
-                        spacegid, caltech, wallpapers,<br>
-                        depositphotos, simbad.<br><br>
-                        informācija: illinois, wiki media, nasa,<br>
-                        The Astrophysical Journal, encyclopedia,<br>
-                        cosmo, britannica, iopscience.iop,<br>
-                        archive,caltech, astro-ph, simbad, theins.
-                    </p>
-                    <p>
-                        Kontaktinformācija<br><br><br>
-                        pervobitiakanl@gmail.com<br>
-                        nastjaminaeva8@gmail.com
-                    </p>
+                    <div class="BoxFooter">
+                        <p>
+                            © 2026 [Space-beauty].<br>
+                            Visas tiesības aizsargātas.<br>
+                        </p>
+                        <p>
+                            Izmantotie avoti:<br><br>
+                            Media: magnific universalis, ing.iac.es,<br>
+                            spacegid, caltech, wallpapers,<br>
+                            depositphotos, simbad.<br><br>
+                            informācija: illinois, wiki media, nasa,<br>
+                            The Astrophysical Journal, encyclopedia,<br>
+                            cosmo, britannica, iopscience.iop,<br>
+                            archive,caltech, astro-ph, simbad, theins.
+                        </p>
+                        <p>
+                            Kontaktinformācija<br><br><br>
+                            pervobitiakanl@gmail.com<br>
+                            nastjaminaeva8@gmail.com
+                        </p>
+                    </div>
                 </div>
             </footer>
         </main>
