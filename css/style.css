@@ -7,6 +7,7 @@ html, body{
     scroll-padding-top: 100px;
 }
 
+
 .container{
     position: fixed;
     display: flex;
@@ -33,7 +34,7 @@ html, body{
 .container div{
     margin: 10px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 1cqw;
     color: #ebedf4;
 }
 
@@ -58,7 +59,7 @@ html, body{
 
 .TextImage{
     position: absolute;
-    top: 45%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
@@ -70,18 +71,23 @@ html, body{
 
 .TextAbout{
     position: absolute;
-    top: 65%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    width: max-content;
-    max-width: 90vw; 
-    font-size: 3cqw;
-    padding: 10px 20px; 
+
+    width: calc(100% - 400px);
+    max-width: none;
+
+    font-size: 1.5cqw;
+    padding: 15px 20px; 
     box-sizing: border-box;
-    color: #7f8dddfd;
+    color: #a7b4fafd;
     background-color: #28263f88;
     text-align: center;
+
+    border: 10px solid #020c3152;
+    border-radius: 50px;
 }
 
 .ImagesLink{
@@ -128,9 +134,9 @@ html, body{
 }
 
 .carousel{
-    --carousel-max-width: 700px;
+    --carousel-max-width: 500px;
     --carousel-border: 10px solid rgb(42, 38, 100);
-    --carousel-radius: 150px;
+    --carousel-radius: 50px;
 
     --carousel-btn-bg: #1c238371;
     --carousel-btn-radius:100px;
@@ -145,13 +151,13 @@ html, body{
 }
 
 .divider{
-  margin: 10% 4rem;
+  margin: 50px 4rem;
   width: auto;
 }
 
 .titleGallery{
     color: #ffffff;
-    font-size: 4cqw;
+    font-size: 3cqw;
     padding: 20px;
     margin: 20px;
     margin-bottom: 1rem;
@@ -173,49 +179,74 @@ html, body{
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     padding-left: 5%;
-    padding-right: 2rem;
+    padding-right: 5%;
     margin-bottom: 7%;
 }
 .star3{
     display: grid;
+    
     padding-left: 5%;
     padding-right: 10%;
     margin-bottom: 5%;
 }
 
 .pictureStar img {
-    width: 50%;
+    position: static;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
     object-fit: cover;
+    display: block;
 }
 
 .pictureStar{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     width: 100%;
     height: auto;
 }
+.pictureStar.BigPicture{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
 .MainText{
     color: #ffffff;
-    font-size: 4cqw;
-    margin-bottom: 10%;
-    padding-left: 5%;
+    margin-bottom: 3%;
 }
+
+.MainText.MainTextUnic{
+    font-size: 2cqw;
+    margin-left: 15%;
+}
+
+
 .GalleryMainText .MainText{
     line-height: 1;
     color: #ffffff;
-    font-size: 4cqw;
-    margin-top: -1rem;
+    font-size: 2cqw;
+    margin-top: 1rem;
     margin-bottom: 5%;
 }
     
+.MainText.MainText2{
+    margin-top: -15cqw;
+}
+.MainText.MainText3{
+    margin-top: 3rem;
+}
+
 .textStar{
     position: relative;
     margin: 0;
     max-width: 90vw;
     color: #e8eaa1;
-    font-size: 2cqw;
+    font-size: 1.5cqw;
     margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 25%;
 }
 
 .footer{
@@ -250,10 +281,126 @@ html, body{
     background-color: #4467da2a;
     border-color: #e7eca388 #000000 #000000 #e7eca388; 
     color: #cedf71ab;
+    font-size: 1cqw;
     padding: 10px;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+@media (max-width:1300px) {
+    .container a{font-size: 1.5cqw;}
+}
+
+@media (max-width: 1000px) {
+    .container a{font-size: 1.5cqw;}
+    .TextAbout{
+        width: calc(100% - 200px);
+        top: 73%;
+        font-size: 2cqw;
+        border-radius: 45px;
+    }
+    .GalleryMainText .MainText{
+        font-size: 3cqw;
+        margin-top: 1rem;
+    }
+    .titleGallery{
+        font-size: 3cqw;
+    }
+    .GalleryMainText .MainText {
+        font-size: 3cqw;
+    }
+    .textStar{
+        font-size: 2cqw;
+        margin-bottom: 5%;
+    }
+    .MainText.MainTextUnic{
+        font-size: 3cqw;
+    }
+    .MainTextFooter{
+        font-size: 2cqw;
+    }
+    .pictureStar img {
+        position: static;
+        width: 100%;
+        max-width: 360px;
+        height: 220px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+    .BoxFooter > p {
+        font-size: 1.5cqw;
+        padding: 10px;
+        margin: 0;
+    }
+    
+}
+
+@media (max-width:800px) {
+    .container a{font-size: 2cqw;}
+    .mainImage img {
+        height: 450px;
+        object-fit: cover;
+    }
+    .TextImage {
+        top: 28%;
+        font-size: 6cqw;
+    }
+    .TextAbout {
+        width: calc(100% - 40px);
+        top: 63%;
+        font-size: 3cqw;
+        padding: 12px 15px;
+        border-width: 5px;
+        border-radius: 25px;
+    }
+    .titleGallery{
+        font-size: 5cqw;
+    }
+    .star1,
+    .star2,
+    .star3 {
+        grid-template-columns: 1fr;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .GalleryMainText .MainText {
+        font-size: 5cqw;
+        margin-top: 1rem;
+    }
+    .textStar {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        font-size: 1.5rem;
+    }
+    .pictureStar img {
+        position: static;
+        width: 100%;
+        max-width: 280px;
+        height: 180px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+    .MainText.MainTextUnic{
+        font-size: 4cqw;
+    }
+    .MainTextFooter{
+        font-size: 4cqw;
+    }
+    .BoxFooter {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 8px 1rem 24px;
+    }
+    .BoxFooter > p {
+        font-size: 3cqw;;
+        padding: 12px;
+        align-items: center;
+    }
+}
+@media (max-width:800px) {
+    .container a{font-size: 2.3cqw;}
 }
