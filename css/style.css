@@ -110,14 +110,12 @@ html, body{
     position: absolute;
     inset: 0;
     background-color: #0a0a0a9a;
-
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 5cqw;
-
     opacity: 0;
 }
 
@@ -220,37 +218,42 @@ html, body{
     margin-bottom: 5%;
 }
 
-
-
-
 .footer{
-    width: 100%;
     display: grid;
     bottom: 0;
     right: 0;
-    background-color: #f3ebda;
+    background-color: #020c31;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.MainTextFooter{
+    color: #ccd6947c;
+    font-size: 1.5cqw;
+    text-align: center;
 }
 
 .BoxFooter{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    
-    background-color: #bc24ca;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 50px;
 }
 
 .BoxFooter > p {
     border: 5px outset;
-    background-color: #dbc234;
-    border-color: #c5c3d3 #19611c #741f1f #f1e9e9; 
+    background-color: #4467da2a;
+    border-color: #e7eca388 #000000 #000000 #e7eca388; 
+    color: #cedf71ab;
     padding: 10px;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
