@@ -1,11 +1,14 @@
 html, body{
+    
     margin: 0;
     padding: 0;
     background-color: #111446;
-
+    font-family: "Neon";
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    
 }
+
 
 
 .container{
@@ -58,13 +61,17 @@ html, body{
 }
 
 .TextImage{
+    font-family: "Stencilla";
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    width: 100%;
-    font-size: clamp(2rem, 10vw, 10rem); 
+    width: calc(100% - 80px);
+    max-width: 1200px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    font-size: clamp(2rem, 7vw, 6.5rem); 
     color: #e8eaa1;
     text-align: center;
 }
@@ -403,4 +410,19 @@ html, body{
 }
 @media (max-width:800px) {
     .container a{font-size: 2.3cqw;}
+}
+
+@font-face {
+    font-family: "Stencilla";
+    src: url("../fonts/stencilla.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Neon";
+    src: url("../fonts/Audiowide-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
