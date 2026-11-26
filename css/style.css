@@ -1,5 +1,4 @@
 html, body{
-    
     margin: 0;
     padding: 0;
     background-color: #111446;
@@ -8,8 +7,6 @@ html, body{
     scroll-padding-top: 100px;
     
 }
-
-
 
 .container{
     position: fixed;
@@ -62,6 +59,9 @@ html, body{
 
 .TextImage{
     font-family: "Stencilla";
+
+    animation: fadeIn 2s ease-out;
+
     position: absolute;
     top: 35%;
     left: 50%;
@@ -78,6 +78,7 @@ html, body{
 
 .TextAbout{
     position: absolute;
+    animation: fadeIn 2s ease-out;
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -100,6 +101,7 @@ html, body{
 .ImagesLink{
     display: flex;
     margin-bottom: 5cqw;
+    animation: animate_pulse 1.5s infinite;
 }
 
 .ImagesLink a{
@@ -129,6 +131,7 @@ html, body{
     justify-content: center;
     text-align: center;
     font-size: 5cqw;
+    
     opacity: 0;
 }
 
@@ -141,6 +144,8 @@ html, body{
 }
 
 .carousel{
+    animation: wipe-enter;
+    animation-timeline: view();
     --carousel-max-width: 500px;
     --carousel-border: 10px solid rgb(42, 38, 100);
     --carousel-radius: 50px;
@@ -163,6 +168,8 @@ html, body{
 }
 
 .titleGallery{
+    animation: wipe-enter;
+    animation-timeline: view();
     color: #ffffff;
     font-size: 3cqw;
     padding: 20px;
@@ -172,6 +179,8 @@ html, body{
 }
 
 .star1{
+    animation: wipe-enter;
+    animation-timeline: view();
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 2fr;
@@ -181,6 +190,8 @@ html, body{
     margin-bottom: 7%;
 }
 .star2{
+    animation: wipe-enter;
+    animation-timeline: view();
     display: grid;
     align-items: center;
     grid-template-columns: 2fr 1fr;
@@ -190,6 +201,8 @@ html, body{
     margin-bottom: 7%;
 }
 .star3{
+    animation: wipe-enter;
+    animation-timeline: view();
     display: grid;
     
     padding-left: 5%;
@@ -220,15 +233,18 @@ html, body{
     margin: 0 auto;
 }
 .MainText{
+    animation: wipe-enter;
+    animation-timeline: view();
     color: #ffffff;
     margin-bottom: 3%;
 }
 
 .MainText.MainTextUnic{
+    animation: wipe-enter;
+    animation-timeline: view();
     font-size: 2cqw;
     margin-left: 15%;
 }
-
 
 .GalleryMainText .MainText{
     line-height: 1;
@@ -246,6 +262,8 @@ html, body{
 }
 
 .textStar{
+    animation: wipe-enter;
+    animation-timeline: view();
     position: relative;
     margin: 0;
     max-width: 90vw;
@@ -425,4 +443,39 @@ html, body{
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes animate_pulse {
+    0% {
+        box-shadow: 0 0 0 0 #000000;
+    }
+    70% {
+        box-shadow: 0 0 0 30px #00000000;
+    }
+    100% {
+        box-shadow: 0 0 0 0 #00000000;
+    }
+}
+
+.wipe-scroll {
+    transform-origin: center center;
+    animation: wipe-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 25%;
+}
+
+@keyframes wipe-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
