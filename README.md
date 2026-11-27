@@ -34,4 +34,4 @@ Virtuālā izstāde – tīmekļa vietnes izstrādes projekts
 7. Projekta izstrādes ieguldījums
     Īss apraksts par katra komandas dalībnieka paveikto darbu:
         Dmitrijs Gaičonoks: Es uzrakstīju visus skriptus JavaScript valoda ar instrukcijām, kā arī nodarbojos ar dizainu vēlākās posmos, izveidoju savo video (izmantojot blender), kas ir redzams vietnes sākumā un izveidoju aprakstu par melniem caurumiem.
-        Anastasija Minajeva: Es izveidoju HTML un CSS failu, pievienojot informāciju un attēlus par zvaigznēm un planētām.
+        Anastasija Minajeva: Es izveidoju visu vietnes HTML kodu un lielāko daļu CSS. Es izstrādāju arī daļu no vietnes dizaina, pievienojot informāciju un attēlus par zvaigznēm un planētām.
