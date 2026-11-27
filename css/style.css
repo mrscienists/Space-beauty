@@ -221,7 +221,7 @@ div#main-content{
 
     --carousel-hover-bg-color: #0a0a0a9a;
     --carousel-hover-text-color: #ffffff;
-    --carousel-hover-font-size: 4rem;
+    --carousel-hover-font-size: clamp(1rem, 3cqw, 5cqw);
 }
 
 .divider{
