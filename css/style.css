@@ -6,7 +6,7 @@ html{
 body{
     margin: 0;
     padding: 0;
-    font-family: "Neon";
+    font-family: "Audiowide-Regular";
     background: #26004d;
     background: linear-gradient(90deg, #490765 0%, rgb(38, 1, 101)100%);
 }
@@ -572,7 +572,7 @@ div#footer{
     font-display: swap;
 }
 @font-face {
-    font-family: "Neon";
+    font-family: "Audiowide-Regular";
     src: url("../fonts/Audiowide-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
