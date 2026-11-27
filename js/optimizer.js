@@ -5,6 +5,16 @@ function remove_blur(){
     });
 }
 
+function video_remover(){
+    const video = document.querySelector("video");
+    video.remove();
+
+    const video_container = document.querySelector(".video-container")
+
+    const img = "<img  alt='.' src='images/bg.webp'>"
+    video_container.innerHTML = img
+}
+
 document.addEventListener("DOMContentLoaded", () =>{
     let fps = 0;
     let lastTime = performance.now();
@@ -14,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () =>{
         if (now - lastTime >= 1000) {
             if (fps < 50){
                 remove_blur();
+                if(fps < 30){
+                    video_remover();
+                }
                 return;
             }
             fps = 0;
