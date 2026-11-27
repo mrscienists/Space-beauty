@@ -488,6 +488,9 @@ div#footer{
 }
 
 @media (max-width:800px) {
+    .mainVideo {
+        padding-top: 40cqw;
+    }
     .container a{font-size: 2cqw;}
     .mainImage img {
         height: 450px;
@@ -499,7 +502,7 @@ div#footer{
     }
     .TextAbout {
         width: calc(100% - 40px);
-        top: 63%;
+        top: 70%;
         font-size: 3cqw;
         padding: 12px 15px;
         border-width: 5px;
@@ -554,7 +557,10 @@ div#footer{
         align-items: center;
     }
 }
-@media (max-width:800px) {
+@media (max-width:600px) {
+    .mainVideo {
+        padding-top: 70cqw;
+    }
     .container a{font-size: 2.3cqw;}
 }
 
